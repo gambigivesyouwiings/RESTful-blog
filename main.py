@@ -45,7 +45,8 @@ def strip_invalid_html(content):
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = os.getenv("secret_key")
+#os.getenv("secret_key")
+app.config['SECRET_KEY'] = "secret_key"
 ckeditor = CKEditor(app)
 Bootstrap(app)
 login_manager = LoginManager()

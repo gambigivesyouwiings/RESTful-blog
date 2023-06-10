@@ -16,7 +16,7 @@ from flask_gravatar import Gravatar
 import os
 from dotenv import load_dotenv
 
-load_dotenv("C:/Users/User/PycharmProjects/environment variables/.env")
+#load_dotenv("C:/Users/User/PycharmProjects/environment variables/.env")
 
 
 # strips invalid tags/attributes
@@ -115,7 +115,7 @@ class Comments(UserMixin, db.Model):
     parent_post = relationship("BlogPost", back_populates="comments", passive_deletes=True)
 
 
-# with app.app_context():
+with app.app_context():
 #     db_posts = db.session.query(BlogPost).all()
 #     for post in posts:
 #         article = BlogPost(id=post["id"], title=post["title"], subtitle=post["subtitle"], date=post["date"],
@@ -123,6 +123,7 @@ class Comments(UserMixin, db.Model):
 #                            img_url="https://images.fineartamerica.com/images-medium-large-5/cactus-blooms-peter-tellone.jpg")
 #         db.session.add(article)
 #         db.session.commit()
+    db.create_all()
 # WTForm
 
 

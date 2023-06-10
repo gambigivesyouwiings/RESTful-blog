@@ -42,7 +42,7 @@ def strip_invalid_html(content):
 
 
 # Gets data from api so as to initialize database
-# posts = requests.get("https://api.npoint.io/88c2c1f644ef334058be").json()
+posts = requests.get("https://api.npoint.io/88c2c1f644ef334058be").json()
 
 
 app = Flask(__name__)
@@ -117,14 +117,14 @@ class Comments(UserMixin, db.Model):
 
 
 with app.app_context():
-#     db_posts = db.session.query(BlogPost).all()
-#     for post in posts:
-#         article = BlogPost(id=post["id"], title=post["title"], subtitle=post["subtitle"], date=post["date"],
-#                            body=post["body"],
-#                            img_url="https://images.fineartamerica.com/images-medium-large-5/cactus-blooms-peter-tellone.jpg")
-#         db.session.add(article)
-#         db.session.commit()
-    db.create_all()
+    db_posts = db.session.query(BlogPost).all()
+    for post in posts:
+        article = BlogPost(id=post["id"], title=post["title"], subtitle=post["subtitle"], date=post["date"],
+                           body=post["body"],
+                           img_url="https://images.fineartamerica.com/images-medium-large-5/cactus-blooms-peter-tellone.jpg")
+        db.session.add(article)
+        db.session.commit()
+#     db.create_all()
 # WTForm
 
 

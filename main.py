@@ -46,7 +46,7 @@ def strip_invalid_html(content):
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = os.environ.get("secret_key")
+app.config['SECRET_KEY'] = "secret_key"
 ckeditor = CKEditor(app)
 Bootstrap(app)
 login_manager = LoginManager()
@@ -60,7 +60,7 @@ gravatar = Gravatar(app,
                     use_ssl=False,
                     base_url=None)
 # CONNECT TO DB
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL")
+app.config['SQLALCHEMY_DATABASE_URI'] = "postgresl://postsdb_zyun_user:j4TtFOZPh3JfBubGSY6b9PnascEI6A6y@dpg-ci259nak728i8tfnli8g-a/postsdb_zyun"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy()
 db.init_app(app)

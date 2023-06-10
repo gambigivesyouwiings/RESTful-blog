@@ -116,14 +116,14 @@ class Comments(UserMixin, db.Model):
     parent_post = relationship("BlogPost", back_populates="comments", passive_deletes=True)
 
 
-with app.app_context():
-    db_posts = db.session.query(BlogPost).all()
-    for post in posts:
-        article = BlogPost(id=post["id"], title=post["title"], subtitle=post["subtitle"], date=post["date"],
-                           body=post["body"],
-                           img_url="https://images.fineartamerica.com/images-medium-large-5/cactus-blooms-peter-tellone.jpg")
-        db.session.add(article)
-        db.session.commit()
+# with app.app_context():
+#     db_posts = db.session.query(BlogPost).all()
+#     for post in posts:
+#         article = BlogPost(id=post["id"], title=post["title"], subtitle=post["subtitle"], date=post["date"],
+#                            body=post["body"],
+#                            img_url="https://images.fineartamerica.com/images-medium-large-5/cactus-blooms-peter-tellone.jpg")
+#         db.session.add(article)
+#         db.session.commit()
 #     db.create_all()
 # WTForm
 

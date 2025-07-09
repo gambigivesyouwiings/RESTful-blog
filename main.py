@@ -15,7 +15,7 @@ import bleach
 from flask_gravatar import Gravatar
 import os
 from dotenv import load_dotenv
-import psycopg2
+
 
 #load_dotenv("C:/Users/User/PycharmProjects/environment variables/.env")
 
